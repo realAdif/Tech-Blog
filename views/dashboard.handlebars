@@ -1,0 +1,27 @@
+{{#if logged_in}}
+    <div>
+        <button type="button" class="btn btn-outline-primary btn-lg">Make a post</button>
+    </div>
+{{else}}
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" disabled>Make a post</button>
+    </div>
+    <br>
+    <div class="alert alert-primary " role="alert">
+        You need to sign in or have a account to make a post!
+    </div>
+{{/if}}
+
+<br>
+
+<div class="card">
+  <div class="card-header">
+    Admin Post
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>You can start post when you login &#128516; .</p>
+      <footer class="blockquote-footer">Post made by: <cite title="Source Title">Aditya</cite></footer>
+    </blockquote>
+  </div>
+</div>
