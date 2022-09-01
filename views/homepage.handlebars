@@ -5,3 +5,13 @@
     <p class="lead">To start you can login, if you are new you can sign up </p>
   </div>
 </div>
+
+{{#if logged_in}}
+  <div>
+    You are logged in
+  </div>
+  {{else}}
+  <div>
+    You are not logged in
+  </div>                   
+{{/if}}

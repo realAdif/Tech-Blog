@@ -24,14 +24,13 @@ router.post('/login', async (req,res) =>{
             req.session.logged_in = true;
 
             res.json({ user: userDate, message: 'You are now logged in!' });
+            console.log('you are logged in');
         });
 
 
     } catch(err){
         res.status(400).json(err);
     }
-
-
 });
 
 module.exports = router;
