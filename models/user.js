@@ -42,10 +42,7 @@ User.init(
                 isAlphanumeric: true, 
             }
         },
-        description:{
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
+     
     },
     {
     hooks: {
