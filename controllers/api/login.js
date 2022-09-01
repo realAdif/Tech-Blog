@@ -10,7 +10,7 @@ router.post('/login', async (req,res) =>{
             res.status(400).json({message:"'Incorrect email ' "});
             return;
         }
-        const validPassword = await userData.checkPassword(req.body.password);
+        const validPassword = await userDate.checkPassword(req.body.password);
 
         if (!validPassword) {
             res
@@ -23,7 +23,7 @@ router.post('/login', async (req,res) =>{
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
-            res.json({ user: userData, message: 'You are now logged in!' });
+            res.json({ user: userDate, message: 'You are now logged in!' });
         });
 
 
