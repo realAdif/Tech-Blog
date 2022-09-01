@@ -1,13 +1,13 @@
 {{#if logged_in}}
     <div>
-        <button type="button" class="btn btn-outline-primary btn-lg">Make a post</button>
+        <button type="button" class="btn btn-outline-primary btn-lg" href="/post" >Make a post</button>
     </div>
 {{else}}
     <div>
         <button type="button" class="btn btn-primary btn-lg" disabled>Make a post</button>
     </div>
     <br>
-    <div class="alert alert-primary " role="alert">
+    <div class="alert alert-danger " role="alert">
         You need to sign in or have a account to make a post!
     </div>
 {{/if}}

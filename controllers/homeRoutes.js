@@ -28,6 +28,14 @@ router.get('/dashboard', async(req,res)=>{
   }
 });
 
+router.get('/post', async(req,res)=>{
+  try{
+    res.render('post');
+  }catch(err){
+    res.status(500).json(err)
+  }
+})
+
 router.get('/signup', (req, res) => {
   res.status(200).render('signup');
 });
