@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User} = require('../../models');
+const { User } = require('../../models');
 
 
 router.post('/login', async (req,res) =>{
@@ -20,7 +20,7 @@ router.post('/login', async (req,res) =>{
         }
 
         req.session.save(() => {
-            req.session.user_id = userData.id;
+            req.session.user_id = userDate.id;
             req.session.logged_in = true;
 
             res.json({ user: userDate, message: 'You are now logged in!' });
