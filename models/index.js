@@ -1,8 +1,8 @@
-const User = require('./Post');
-const Post = require('./User');
+const User = require('./User');
+const Post = require('./Post');
 
 Post.belongsTo(User,{
-    foreignKey: 'id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 

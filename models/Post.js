@@ -22,6 +22,13 @@ Post.init(
         author:{
             type: DataTypes.STRING,
             
+        },
+        user_id:{
+            type:DataTypes.INTEGER,
+            allowNull: false,
+            references:{
+                model: "user"
+            }
         }
 
     },
