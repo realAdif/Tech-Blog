@@ -19,15 +19,20 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        author:{
-            type: DataTypes.STRING,
+        // user_name:{
+        //     type: DataTypes.STRING,
+        //     references:{
+        //         model:"user",
+        //         key:"username"
+        //     }
             
-        },
+        // },
         user_id:{
             type:DataTypes.INTEGER,
             allowNull: false,
             references:{
-                model: "user"
+                model: "user",
+                key: "id"
             }
         }
 
