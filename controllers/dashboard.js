@@ -5,20 +5,18 @@ const {Post} = require('../models');
 router.get('/', async(req,res)=>{
     Post.findAll({
         where:{
-            user_id: req.session.user_id
+            // user_id: req.session.user_id
         } 
     }).then(data =>{
         const posts = data.map((post)=>
             
             post.get({ plain: true })
         )
-        console.log(posts);
+        
         res.render('dashboard', {
             logged_in: req.session.logged_in,    
             posts
         });
-        
-        console.log(posts);
 
     })
     .catch(err =>{

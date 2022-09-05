@@ -3,7 +3,7 @@ const newCommentHandler = async(event) =>{
 
     const title = document.querySelector('#post-title').value.trim();
     const postContent = document.querySelector('#post-text').value.trim();
-    
+    console.log("This function is working");
     if(title && postContent){
         const response = await fetch('/api/post',{
             method: 'POST',
