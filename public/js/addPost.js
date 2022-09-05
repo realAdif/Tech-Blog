@@ -2,12 +2,12 @@ const newCommentHandler = async(event) =>{
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value.trim();
-    const postContent = document.querySelector('#post-text').value.trim();
+    const post = document.querySelector('#post-text').value.trim();
     console.log("This function is working");
-    if(title && postContent){
+    if(title && post){
         const response = await fetch('/api/post',{
             method: 'POST',
-            body: JSON.stringify({title, postContent}),
+            body: JSON.stringify({title, post}),
             headers:{
                 'Content-Type': 'application/json',
             },
