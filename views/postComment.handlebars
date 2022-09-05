@@ -4,19 +4,31 @@
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <p> {{postData.post}}.</p>
-      <footer class="blockquote-footer">Post made by: <cite title="Source Title">{{postData.user_id}}</cite></footer>
-      {{!-- <a href="{{id}}" class="btn btn-primary">View Post</a> --}}
+        <p> {{postData.post}}.</p>
+        <footer class="blockquote-footer">Post made by: <cite title="Source Title">{{postData.user_id}}</cite></footer>  
     </blockquote>  
   </div>
 </div>
+
 <br>
+
+
+{{!-- This is my comment --}}
+<div class="mb-3">
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Make Comment :)" id="comment_input">
+  <br>
+  <a href="#" class="btn btn-primary">Post Comment</a>
+</div>
+
+<br>
+
 <div class="card">
     <div class="card-body">
         <blockquote class="blockquote mb-0">
         <p> This is a comment.</p>
-        <footer class="blockquote-footer">Post made by: <cite title="Source Title">Aditya </cite></footer>
-        {{!-- <a href="{{id}}" class="btn btn-primary">View Post</a> --}}
+        <footer class="blockquote-footer">Post made by: <cite title="Source Title">Aditya</cite></footer>
         </blockquote>  
     </div>
 </div>
+
+<script src="./js/addComment.js"></script>
