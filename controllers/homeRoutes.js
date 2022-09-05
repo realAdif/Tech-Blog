@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const {User,Post,Comment} = require('../models')
 
 router.get('/', async (req, res) => {
     try {
@@ -18,16 +18,19 @@ router.get('/login',async (req,res) =>{
     }
 });
 
-// router.get('/dashboard', async(req,res)=>{
-//   try{
-//     res.render('dashboard',{
-//       logged_in: req.session.logged_in
-      
-//     });
-//   }catch(err){
-//     res.status(500).json(err);
-//   }
-// });
+router.get('/dashboard/:id', async(req,res)=>{
+  try{
+    const postData = await Post.findByPk(req.params.id)
+      res.render('postComment',{
+        logged_in: req.session.logged_in,
+        postData: postData.get({ plain: true }) ,
+
+        
+      });
+  }catch(err){
+      res.status(500).json(err)
+  }
+});
 
 router.get('/post', async(req,res)=>{
   try{
@@ -37,7 +40,7 @@ router.get('/post', async(req,res)=>{
   }catch(err){
     res.status(500).json(err)
   }
-})
+});
 
 router.get('/signup', (req, res) => {
   res.status(200).render('signup');
