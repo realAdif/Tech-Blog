@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
   Comment.create({ ...req.body, user_id: req.session.user_id })
     .then((data) => {
     //   const comment = data.map((comment) => comment.get({ plain: true }));  
-        console.log(data);
+        
         const comment = data.get({plain: true});
         res.status(200).json(comment);
     })
