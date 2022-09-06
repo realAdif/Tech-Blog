@@ -21,7 +21,7 @@ router.get('/login',async (req,res) =>{
 router.get('/dashboard/:id', async(req,res)=>{
   try{
     const postData = await Post.findByPk(req.params.id);
-    const commentData = await Comment.findAll({where:{post_id: req.params.id}})
+    const commentData = await Comment.findAll({where:{post_id: req.params.id}, include:[{ model: User}] })
 
     res.render('postComment',{
       logged_in: req.session.logged_in,

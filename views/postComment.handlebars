@@ -14,15 +14,18 @@
 
 
 {{!-- This is my comment --}}
-<from class="new-comment">
-
-  <div class="mb-3">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Make Comment :)" id="comment_input">
-    <br>
-    <button type="submit" class="btn btn-primary btn-md">Post</button>
+<form class="new-comment">
+  <div class="card-header">
+    <h3>Add New Comment</h3>
   </div>
   
-</from>
+  <div class="card-body">
+    <input type="hidden" name="post-id" id="comment_input" value="{{postData.id}}" />
+    <label class="form-label" for="comment-body">Comment</label>
+    <textarea name="comment-body" class="form-input"></textarea>
+    <button type="submit" class="btn">Submit</button>
+  </div>
+</form>
 
 <br>
 {{#each comments}}
@@ -30,7 +33,7 @@
     <div class="card-body">
         <blockquote class="blockquote mb-0">
         <p>{{comment}}</p>
-        <footer class="blockquote-footer">Post made by: <cite title="Source Title">{{user_id}}</cite></footer>
+        <footer class="blockquote-footer">Post made by: <cite title="Source Title">{{user.name}}</cite></footer>
         </blockquote>  
     </div>
 </div>

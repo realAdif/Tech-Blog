@@ -1,17 +1,23 @@
-const newComment = async (event)=>{
+const newComment = async (event) => {
     event.preventDefault();
-
-    const comment = document.querySelector('#comment_input').value;
-    console.log(comment);
-    const response = await fetch('api/comment/',{
-        method: 'POST',
-        body: JSON.stringify({comment}),
-        headers:{
-            'Content-Type': 'application/json',
+  
+    const postId = document.querySelector('input[name="post-id"]').getAttribute('value');
+    const comment = document.querySelector('textarea[name="comment-body"]').value;
+    
+   
+    if (comment) {
+      await fetch("/api/comment", {
+        method: "POST",
+        body: JSON.stringify({
+          post_id: parseInt(postId),
+          comment,
+        }),
+        headers: {
+          "Content-Type": "application/json",
         },
-    });
-
-};
-document.querySelector('.new-comment').addEventListener('submit',newComment);
-
-console.log("this working!!")
+      });
+      document.location.reload();
+    }
+  };
+  
+  document.querySelector(".new-comment").addEventListener("submit", newComment);
