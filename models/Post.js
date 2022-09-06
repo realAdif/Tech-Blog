@@ -19,14 +19,7 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // user_name:{
-        //     type: DataTypes.STRING,
-        //     references:{
-        //         model:"user",
-        //         key:"username"
-        //     }
-            
-        // },
+        
         user_id:{
             type:DataTypes.INTEGER,
             allowNull: false,
@@ -39,6 +32,7 @@ Post.init(
     },
     {
         sequelize,
+        freezeTableName: true,
         modelName: 'post',
     }
 

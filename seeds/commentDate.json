@@ -1,6 +1,12 @@
 [
     {
         "user_id": 1,
+        "post_id": 1,
         "comment": "This is my frist comment"
+    },
+    {
+        "user_id": 1,
+        "post_id": 2,
+        "comment": "This is my second comment"
     }
 ]

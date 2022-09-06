@@ -4,7 +4,7 @@ const seedUsers = require('./userDate.json');
 const seedPost = require('./postDate.json');
 const seedComment = require('./commentDate.json');
 
-const {User,Post,Comment} = require('../models');
+const {User,Comment,Post} = require('../models');
 
 
 const seedDataBase = async () =>{

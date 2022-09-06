@@ -20,15 +20,18 @@ router.get('/login',async (req,res) =>{
 
 router.get('/dashboard/:id', async(req,res)=>{
   try{
-    const postData = await Post.findByPk(req.params.id)
-      res.render('postComment',{
-        logged_in: req.session.logged_in,
-        postData: postData.get({ plain: true }) ,
+    const postData = await Post.findByPk(req.params.id);
+    const commentData = await Comment.findAll({where:{post_id: req.params.id}})
 
-        
-      });
+    res.render('postComment',{
+      logged_in: req.session.logged_in,
+      postData: postData.get({ plain: true }) ,
+      comments: commentData.map(c => c.get({plain: true}))
+    });
   }catch(err){
-      res.status(500).json(err)
+    console.log(err);
+    res.status(500).json(err)
+
   }
 });
 

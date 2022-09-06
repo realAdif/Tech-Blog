@@ -14,21 +14,24 @@
 
 
 {{!-- This is my comment --}}
-<div class="mb-3">
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Make Comment :)" id="comment_input">
-  <br>
-  <a href="#" class="btn btn-primary">Post Comment</a>
-</div>
+<from class="new-comment">
+  <div class="mb-3">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Make Comment :)" id="comment_input">
+    <br>
+    <button type="submit" class="btn btn-primary btn-md">Post</button>
+  </div>
+</from>
 
 <br>
-
+{{#each comments}}
 <div class="card">
     <div class="card-body">
         <blockquote class="blockquote mb-0">
-        <p> This is a comment.</p>
+        <p>{{comment}}</p>
         <footer class="blockquote-footer">Post made by: <cite title="Source Title">Aditya</cite></footer>
         </blockquote>  
     </div>
 </div>
+{{/each}}
 
-<script src="./js/addComment.js"></script>
+<script src="/js/addComment.js"></script>
