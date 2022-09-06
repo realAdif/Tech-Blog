@@ -1,18 +1,17 @@
-const newComment = async(event)=>{
+const newComment = async (event)=>{
     event.preventDefault();
 
     const comment = document.querySelector('#comment_input').value;
-    console.log(comment);
-    // const response = await fetch('/api/comment/',{
-    //     method: 'POST',
-    //     body: JSON.stringify({comment}),
-    //     headers:{
-    //         'Content-Type': 'application/json',
-    //     },
-    // })
+    
+    const response = await fetch('/api/comment/',{
+        method: 'POST',
+        body: JSON.stringify({comment}),
+        headers:{
+            'Content-Type': 'application/json',
+        },
+    });
 
 };
-document.querySelector('.new-comment'),addEventListener('submit',()=>{
-    const comment = document.querySelector('#comment_input').value;
-    console.log(comment);
-})
+document.querySelector('.new-comment').addEventListener('submit',newComment);
+
+console.log("this working!!")

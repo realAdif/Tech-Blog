@@ -15,11 +15,13 @@
 
 {{!-- This is my comment --}}
 <from class="new-comment">
+
   <div class="mb-3">
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Make Comment :)" id="comment_input">
     <br>
     <button type="submit" class="btn btn-primary btn-md">Post</button>
   </div>
+  
 </from>
 
 <br>
@@ -28,7 +30,7 @@
     <div class="card-body">
         <blockquote class="blockquote mb-0">
         <p>{{comment}}</p>
-        <footer class="blockquote-footer">Post made by: <cite title="Source Title">Aditya</cite></footer>
+        <footer class="blockquote-footer">Post made by: <cite title="Source Title">{{user_id}}</cite></footer>
         </blockquote>  
     </div>
 </div>
